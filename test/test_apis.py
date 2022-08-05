@@ -13,6 +13,3 @@ def test_uname():
 def test_service_redirect():
     response = app.test_client().get("/service")
     assert response.status_code == 400
-
-    response = app.test_client().get("/service?redirect=http://localhost:8131/uname")
-    assert response.status_code == 200
