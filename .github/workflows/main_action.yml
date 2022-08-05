@@ -89,11 +89,12 @@ jobs:
       #   with:                                                                                                         
       #     args: set image deployment/my-pod app=${{ env.RELEASE_IMAGE }} --record -n $KUBE_NAMESPACE 
 
-      - name: Deploy to K8s cluster
-        id: temp
-        uses: lachlanevenson/k8s-kubectl:latest
-        with:                                                                                                         
-          args: get nodes
+      # - name: Deploy to K8s cluster
+      #   id: temp
+      #   uses: lachlanevenson/k8s-kubectl:latest
+      #   with:                                                                                                         
+      #     args: get nodes
 
       - name: Print
-        run: "echo ${{ steps.temp.outputs }}"
+        # run: "echo ${{ steps.temp.outputs }}"
+        run: "echo hello"
