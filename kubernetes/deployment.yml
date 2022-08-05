@@ -17,7 +17,7 @@ spec:
     spec:  
       containers:
         name: 
-        image: twelcon/random:0.0.1
+        image: twelcon/random:9
         ports:
           - containerPort: 8131
 
