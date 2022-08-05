@@ -1,0 +1,36 @@
+api: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: k8s-bugging-deployment
+    app: k8s-bugging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-bugging
+  template:
+    metadata:
+      labels:
+        name: k8s-bugging
+        app: k8s-bugging
+    spec:  
+      containers:
+        name: 
+        image: twelcon/random:0.0.1
+        ports:
+          - containerPort: 8131
+
+---
+api: apps/v1
+kind: Service
+metadata:
+  labels:
+    name: k8s-bugging-service
+    app: k8s-bugging
+spec:
+  ports:
+    - port: 80
+      targetPort: 8131
+  selector:
+    app: k8s-bugging
