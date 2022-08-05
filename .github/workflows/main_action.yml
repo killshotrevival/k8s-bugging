@@ -91,7 +91,7 @@ jobs:
 
       - name: Deploy to K8s cluster
         id: temp
-        uses: docker/lachlanevenson/k8s-kubectl
+        uses: lachlanevenson/k8s-kubectl:latest
         with:                                                                                                         
           args: get nodes
 
